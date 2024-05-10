@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\content;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -16,23 +15,11 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('landing-page', [
-        // "test" => content::all(),
-    ]);
+    return view('landing-page');
 });
 
-Route::get('/loginPage', function () {
-    return view('loginPage', [
-        "test" => content::all(),
-    ]);
-});
-
-Route::get('/add-new-content', function () {
-    return view('add-new-content');
-});
-
-Route::get('/edit-content', function () {
-    return view('edit-content');
+Route::get('/login', function () {
+    return view('loginPage');
 });
 
 Route::get('auth/redirect', [AuthController::class, 'redirect']);

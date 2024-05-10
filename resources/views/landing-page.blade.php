@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-  <section class="main-page"">
+  <section class="main-page">
     <div class="container-fluid ms-0 me-0">
       @include('partials.islab-section')
       @include('partials.iscsc-section')
