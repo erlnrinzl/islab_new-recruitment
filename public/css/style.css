@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #0096D9;
+    font-family: "Open Sans", sans-serif;
+}
+
+.icon-signin {
+    height: 20px;
+}
+
+.logo {
+    width: 80px;
+}
+
+#hero {
+    overflow: hidden;
+}
+
+#hero img {
+    margin-left: -20px;
+    height: 680px;
+}
+
+#content {
+    background-color: white;
+}
+
+/* .signin {
+    margin-left: 300px;
+} */
+
+.btn {
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+footer h3 {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+footer p {
+    font-size: 10px;
+    font-family: "Open Sans", sans-serif;
+}

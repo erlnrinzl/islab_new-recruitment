@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #0096D9;
+    font-family: "Open Sans", sans-serif;
+}
+
+.icon-signin {
+    height: 20px;
+}
+
+.logo {
+    width: 80px;
+}
+
+
+footer h3 {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+footer p {
+    font-size: 10px;
+    font-family: "Open Sans", sans-serif;
+}

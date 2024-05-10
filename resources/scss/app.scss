@@ -1,0 +1,21 @@
+//variable
+
+//import file function dari bootstrap karena file variable memakai variable di dalam file function
+// @import '~bootstrap/scss/_variables';
+// @import '/node_modules/bootstrap/scss/variables';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+// @import '../node_modules/bootstrap/scss/functions';
+//import file variable untuk mengakses variable $spacers
+
+$new-spacers : (
+    6: 300px
+);
+// menambahkan entry spacer baru
+// menggabungkan 2 variable map, new-spacers dan spacers
+$spacers: map-merge($new-spacers, $spacers);
+
+// import bootstrap
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap';
