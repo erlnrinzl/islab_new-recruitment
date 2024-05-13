@@ -1,8 +1,7 @@
 <?php
 
-use App\Models\content;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,24 +15,13 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('landing-page', [
-        // "test" => content::all(),
-    ]);
+    return view('welcome');
 });
 
-Route::get('/loginPage', function () {
-    return view('loginPage', [
-        "test" => content::all(),
-    ]);
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/add-new-content', function () {
-    return view('add-new-content');
-});
+Route::get('/form', [FormController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/edit-content', function () {
-    return view('edit-content');
-});
-
-Route::get('auth/redirect', [AuthController::class, 'redirect']);
-Route::get('auth/callback', [AuthController::class, 'callback']);
+require __DIR__ . '/auth.php';
