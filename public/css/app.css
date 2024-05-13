@@ -24369,6 +24369,7 @@ textarea.form-control-lg {
   height: 680px;
 }
 
+/* for mobile screen */
 @media only screen 
    and (max-width : 320px) {
     #hero img {
@@ -24415,4 +24416,97 @@ footer h3 {
 footer p {
   font-size: 10px;
   font-family: "Open Sans", sans-serif;
+}
+
+/* Login Page */
+.login-btn {
+  margin-top: 187px;
+  margin-bottom: 50px;
+}
+
+/* Dashboard-User */
+.iscsc-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #080808;
+  height: 140px;
+  width: calc 435px;
+  border-radius: 15px;
+  background: url('../image/image-9.png');
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.iscsc-hero::before{
+  position: absolute;
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: black;
+  opacity: 45%;
+}
+
+.iscsc-hero:hover {
+  background-image: none;
+  background-color: #0096D9;
+}
+
+.iscsc-hero:hover::before {
+  opacity: 0;
+}
+
+.hero-2 {
+  background: url('../image/image-6.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-3 {
+  background: url('../image/image-8.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.iscsc-hero h3 {
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.iscsc-hero a {
+  text-decoration: none;
+}
+
+.table-progress thead th {
+  color: white;
+  background-color: #0096D9;
+}
+
+@media only screen 
+   and (max-width : 320px) {
+    .large-display {
+      display: none;
+    }
+}
+
+@media only screen 
+   and (max-width : 992px) {
+    .large-display {
+      display: none;
+    }
+}
+
+@media only screen 
+   and (min-width : 992px) {
+    .small-display {
+      display: none;
+    }
 }

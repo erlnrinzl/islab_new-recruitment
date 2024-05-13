@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','Form ISCSC')
 @section('container')
   <div class="container mt-5 pb-5">
     <div class="row justify-content-center">
@@ -64,5 +65,5 @@
       </div>
     </div>
   </div>
-@endsection('container')
+@endsection
 

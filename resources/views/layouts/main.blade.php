@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
+        <title>@yield('title', 'Default Title')</title>
         <!-- Bootstrap icon -->
         <link rel="stylesheet" href="/css/app.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
