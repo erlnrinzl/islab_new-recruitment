@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@ class AuthController extends Controller
         try {
             $user = Socialite::driver('azure')->user();
         } catch (Exception $e) {
+            Session::flash('error', 'Akun tidak ditemukan.');
             return redirect()->back();
         }
 
@@ -42,6 +44,7 @@ class AuthController extends Controller
             return $userAccount->user;
         } else {
             // create new user
+
             $user = User::create([
                 'name' => $socialUser->getName(),
                 'email' => $socialUser->getEmail()

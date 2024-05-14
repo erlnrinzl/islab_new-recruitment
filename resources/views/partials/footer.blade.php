@@ -1,4 +1,4 @@
-<footer class="container-fluid text-end d-flex align-items-center justify-content-end" style="height: 150px; background-color:rgb(31, 32, 32)">
+<footer class="container-fluid text-center d-flex align-items-center justify-content-center" style="height: 150px; background-color:rgb(31, 32, 32)">
   <div class="row">
     <div class="col me-4">
       <h3 class="text-white mt-3">SCHOOL OF INFORMATION SYSTEM</h3>

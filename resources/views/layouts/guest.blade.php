@@ -22,9 +22,13 @@
 </head>
 
 <body>
+    @include('layouts.navigation')
+
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>
+
+    @include('partials.footer')
 </body>
 
 </html>
