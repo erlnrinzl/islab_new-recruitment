@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Exception;
-use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Students;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -28,27 +28,34 @@ class AuthController extends Controller
             return redirect()->back();
         }
 
-        $authUser = $this->findOrCreateUser($user);
+        $student = Students::where('email', $user->getEmail())->first();
 
-        Auth()->login($authUser, true);
-
-        return redirect()->route('dashboard');
+        if ($student) {
+            $authUser = $this->findOrCreateUser($user);
+            Auth::login($authUser);
+            return redirect()->route('dashboard');
+        } else {
+            Session::flash('error', 'Data kamu tidak ditemukan');
+            return redirect()->route('login');
+        }
     }
 
     public function findOrCreateUser($socialUser)
     {
-        // get user account within our database
         $userAccount = User::where('email', $socialUser->getEmail())->first();
 
         if ($userAccount) {
-            return $userAccount->user;
+            return $userAccount;
         } else {
-            // create new user
-
             $user = User::create([
                 'name' => $socialUser->getName(),
                 'email' => $socialUser->getEmail()
             ]);
+
+            $student = Students::where('email', $socialUser->getEmail())->first();
+            $student->user_id = $user->id;
+            $student->save();
+            
             return $user;
         }
     }

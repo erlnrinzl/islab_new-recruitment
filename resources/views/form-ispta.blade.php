@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Form PTA')
 @section('container')
-    <div class="container mt-5 pb-5">
+    <div class="container mt-2 pb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow">

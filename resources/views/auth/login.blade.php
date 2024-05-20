@@ -1,3 +1,4 @@
+@section('title','Login to ' . config('app.name'))
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -8,7 +9,7 @@
     <section class="container">
         @if (Session::has('error'))
             <div class="row">
-                <div class="col ">
+                <div class="col">
                     <div class="alert alert-danger mt-2">
                         {{ Session::get('error') }}
                     </div>

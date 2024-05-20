@@ -14,7 +14,7 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <a href="formISCSC">
+                    <a href={{ url('form?form=iscsc') }}>
                         <div class="iscsc-hero text-start d-flex align-items-end">
                             <h3 class="large-display ms-3">
                                 Information System Case </br>
@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="formPTA">
+                    <a href={{ url('form?form=ispta') }}>
                         <div class=" iscsc-hero hero-2 text-start d-flex align-items-end">
                             <h3 class="large-display ms-3">
                                 Information Systems Part-Time</br>
@@ -40,7 +40,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="formISPM">
+                    <a href={{ url('form?form=ispm') }}>
                         <div class="iscsc-hero hero-3 text-start d-flex align-items-end">
                             <h3 class="large-display ms-3">
                                 Information System Project </br>
@@ -124,14 +124,4 @@
             </div>
         </div>
     </section>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div>
 </x-app-layout>
