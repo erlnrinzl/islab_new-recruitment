@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Exception;
-use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Students;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -20,17 +21,42 @@ class AuthController extends Controller
 
     public function callback()
     {
-        $msUser = Socialite::driver('azure')->user();
-
-        // kondisi untuk flash message
-        if (!$msUser) {
+        try {
+            $user = Socialite::driver('azure')->user();
+        } catch (Exception $e) {
             Session::flash('error', 'Akun tidak ditemukan.');
-            return redirect()->route('loginPage');
+            return redirect()->back();
         }
 
-        dd($msUser);
-        
-        
+        $student = Students::where('email', $user->getEmail())->first();
 
+        if ($student) {
+            $authUser = $this->findOrCreateUser($user);
+            Auth::login($authUser);
+            return redirect()->route('dashboard');
+        } else {
+            Session::flash('error', 'Data kamu tidak ditemukan');
+            return redirect()->route('login');
+        }
+    }
+
+    public function findOrCreateUser($socialUser)
+    {
+        $userAccount = User::where('email', $socialUser->getEmail())->first();
+
+        if ($userAccount) {
+            return $userAccount;
+        } else {
+            $user = User::create([
+                'name' => $socialUser->getName(),
+                'email' => $socialUser->getEmail()
+            ]);
+
+            $student = Students::where('email', $socialUser->getEmail())->first();
+            $student->user_id = $user->id;
+            $student->save();
+            
+            return $user;
+        }
     }
 }

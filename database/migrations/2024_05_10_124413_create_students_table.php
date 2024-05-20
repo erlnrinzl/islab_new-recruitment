@@ -17,14 +17,15 @@ class CreateStudentsTable extends Migration
 
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('nim')->length(10);
+            $table->string('email')->unique();
+            $table->bigInteger('nim');
             $table->foreignId('user_id')->nullable()->constrained();
             $table->foreignId('major_id')->constrained('campus_majors');
             $table->foreignId('region_id')->constrained('campus_regions');
             $table->foreignId('streamcourse_id')->nullable()->constrained('campus_stream_courses');
             $table->string('name');
-            $table->string('domicile');
-            $table->boolean('active_status');
+            $table->string('domicile')->nullable();
+            $table->boolean('active_status')->default(true);
             $table->float('gpa', 3, 2);
             $table->timestamps();
         });
