@@ -27,20 +27,12 @@
         <h1 class="mt-3">Information Systems Laboratory <br> Assistant </h1>
         <p class="p-section">
             Information Systems Laboratory Assistants are members of the
-            <br>
             information Systems Laboratory who are specifically tasked to
-            <br>
             conduct teaching in practicum classes along with potentially
-            <br>
             assisting lecturers in teaching their classes
-            <br>
-            <br>
             In addition to teaching, IS Laboratory Assistants are also expected
-            <br>
             to grade students laboratory assignments and to help students
-            <br>
             with their general understanding of systems design expected from
-            <br>
             a student from the School of Information Systems.
         </p>
         <a href={{ url('/auth/redirect') }} class="btn">Register Now</a>

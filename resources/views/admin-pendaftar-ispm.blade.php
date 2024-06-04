@@ -29,7 +29,7 @@
                 <td>BIT</td>
                 <td>Bekasi</td>
                 <td>Accepted</td>
-                <td><button class="detail-button">Detail</button></td>
+                <td><button class="btn btn-primary upload-btn">Detail</button></td>
               </tr>
               <tr>
                 <td>Matthew C.H.B</td>
@@ -38,7 +38,7 @@
                 <td>BIT</td>
                 <td>Bekasi</td>
                 <td>Accepted</td>
-                <td><button class="detail-button">Detail</button></td>
+                <td><button class="btn btn-primary upload-btn">Detail</button></td>
               </tr>
               <tr>
                 <td>Matthew C.H.B</td>
@@ -47,7 +47,7 @@
                 <td>BIT</td>
                 <td>Bekasi</td>
                 <td>Rejected</td>
-                <td><button class="detail-button">Detail</button></td>
+                <td><button class="btn btn-primary upload-btn">Detail</button></td>
               </tr>
               <tr>
                 <td>Matthew C.H.B</td>
@@ -56,7 +56,7 @@
                 <td>BIT</td>
                 <td>Bekasi</td>
                 <td>Waiting...</td>
-                <td><button class="detail-button">Detail</button></td>
+                <td><button class="btn btn-primary upload-btn">Detail</button></td>
               </tr>
             </tbody>
         </table>

@@ -26,19 +26,12 @@
         <h1 class="mt-3">Information Systems Case Study <br> Club Member</h1>
         <p class="p-section">
             Information Systems Case Study Club Members are members of
-            <br>
             the Information Systems Laboratory who mainly focus on
-            <br>
             developing their problem solving skills and implementing them
-            <br>
             within national and international competitions under the guidance
-            <br>
             of senior IS Lab members and lecturers. The problems Case Study
-            <br>
             Club Members tackle range from business problems (often related
-            <br>
             to IT) to UI/UX design challenges
-            <br>
         </p>
         <a href={{ url('/auth/redirect') }} class="btn">Register Now</a>
     </div>

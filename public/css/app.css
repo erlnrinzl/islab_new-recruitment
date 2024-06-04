@@ -24410,6 +24410,7 @@ textarea.form-control-lg {
 
 .p-section {
   text-align: justify;
+  width: 600px;
 }
 
 #carouselFadeispta {
@@ -24422,40 +24423,6 @@ textarea.form-control-lg {
 
 #carouselFadeispm {
   margin-right: -12px;
-}
-
-#carouselFade {
-  /* mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 50%, transparent 95%); */
-}
-
-/* #carouselFadeiscsc {
-  mask-image: linear-gradient(270deg, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 52%, transparent 100%);
-} */
-
-/* for mobile screen */
-@media only screen 
-   and (max-width : 320px) {
-    /* For image in pta and ispm */
-    /* #hero img {
-      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 52%, transparent 80%);
-    }
-    #iscsc-hero img {
-      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 52%, transparent 95%);
-    } */
-}
-
-@media only screen 
-   and (max-width : 768px) {
-    /* For image in pta and ispm */
-    /* #hero img {
-      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 52%, transparent 95%);
-    } */
-    #carouselFade {
-      /* -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 52%, transparent 95%); */
-    }
-    #iscsc-hero img {
-      /* -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 52%, transparent 95%); */
-    }
 }
 
 
