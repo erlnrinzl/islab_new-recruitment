@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin-eligibilitas-PTA');
+    return view('detail-pendaftar-iscsc');
 });
 
 Route::get('/dashboard', function () {

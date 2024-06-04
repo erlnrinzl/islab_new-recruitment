@@ -24657,3 +24657,98 @@ footer p {
   border-radius: 0;
   margin-bottom: 0;
 }
+
+.detail-button {
+  background-color: #0096D9;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+/* detail */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.page-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #4A4A4A;
+}
+
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.container-detail {
+  width: 80vw; /* Adjust the width to be 90% of the viewport width */
+  max-width: 1200px; /* Set a maximum width to ensure it doesn't get too wide on large screens */
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.details {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  width: 48%;
+  text-align: left;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+p strong {
+  font-size: 18px;
+  color: #000000;
+}
+
+.detail-text {
+  margin-left: 20px;
+  color: #5B5B5B;
+  display: inline-block;
+}
