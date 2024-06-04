@@ -45,6 +45,7 @@
             padding: 5px 20px;
         }
     </style>
+    @include('navbar-admin')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">

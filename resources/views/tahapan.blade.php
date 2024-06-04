@@ -10,28 +10,7 @@
 </head>
 <body>
     {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="{{ asset('image/logo-SIS-PNG-white.png') }}" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-5">
-                    <a class="nav-link ms-lg-4" aria-current="page" href="#">Home</a>
-                    <a class="nav-link ms-lg-4" aria-current="page" href="#">Part-Time Assistant</a>
-                    <a class="nav-link ms-lg-4" aria-current="page" href="#">ISCSC</a>
-                    <a class="nav-link ms-lg-4" aria-current="page" href="#">ISPM</a>
-                    <a class="nav-link ms-lg-4" aria-current="page" href="#">Laporan</a>
-                    <a class="nav-link ms-lg-6" aria-current="page" href="loginPage">Sign-Out
-                    <img class="icon-signin" src="/image/icon-signin.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('navbar-admin')
     {{-- Navbar --}}
 
     {{-- Content --}}

@@ -18,7 +18,7 @@
 <body>
 
     <!-- Navbar  -->
-    @include('partials.navbar-admin')
+    @include('partials.navbar')
 
     <!-- Main Content  -->
     @yield('content')

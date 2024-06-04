@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('nilai');
+    return view('admin-home-ISPM');
 });
 
 Route::get('/dashboard', function () {

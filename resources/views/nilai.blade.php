@@ -1,10 +1,16 @@
-@extends('layouts.admin')
-@section('title','Home - ' . config('app.name'))
-@section('content')
-@endsection
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <link rel="stylesheet" href="/css/tahapan.css"> --}}
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Tahapan</title>
+</head>
 <body>
     {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img class="logo" src="{{ asset('image/logo-SIS-PNG-white.png') }}" alt="">
@@ -63,7 +69,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+    @include('partials.navbar-admin')
     
     {{-- Navbar --}}
 
