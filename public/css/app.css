@@ -24408,6 +24408,22 @@ textarea.form-control-lg {
   height: 680px;
 }
 
+.p-section {
+  text-align: justify;
+}
+
+#carouselFadeispta {
+  margin-right: -12px;
+}
+
+#carouselFadeiscsc {
+  margin-left: -12px;
+}
+
+#carouselFadeispm {
+  margin-right: -12px;
+}
+
 #carouselFade {
   /* mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 44%, rgba(0, 0, 0, 1) 50%, transparent 95%); */
 }
@@ -24674,13 +24690,13 @@ footer p {
 
 
 /* detail */
-h1 {
+/* h1 {
   text-align: center;
   color: #333;
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 20px;
-}
+} */
 
 .title-container {
   display: flex;
@@ -24735,7 +24751,7 @@ h1 {
   text-align: left;
 }
 
-p {
+/* p {
   margin: 10px 0;
   font-size: 15px;
   line-height: 1.5;
@@ -24745,7 +24761,7 @@ p {
 p strong {
   font-size: 18px;
   color: #000000;
-}
+} */
 
 .detail-text {
   margin-left: 20px;

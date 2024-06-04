@@ -21,7 +21,7 @@
     @include('partials.navbar')
 
     <!-- Main Content  -->
-    @yield('content')
+    @yield('container')
 
     <!-- Footer  -->
     @include('partials.footer')

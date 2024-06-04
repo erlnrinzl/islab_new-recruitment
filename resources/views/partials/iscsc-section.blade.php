@@ -24,7 +24,7 @@
         </div>
     <div class="col-md-6 mb-4 order-sm-2 order-md-1" id="content">
         <h1 class="mt-3">Information Systems Case Study <br> Club Member</h1>
-        <p>
+        <p class="p-section">
             Information Systems Case Study Club Members are members of
             <br>
             the Information Systems Laboratory who mainly focus on
