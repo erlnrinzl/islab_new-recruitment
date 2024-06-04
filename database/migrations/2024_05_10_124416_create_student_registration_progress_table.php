@@ -19,7 +19,7 @@ class CreateStudentRegistrationProgressTable extends Migration
             $table->id();
             $table->foreignId('step_id')->constrained('recruitment_steps');
             $table->foreignId('registration_id')->constrained('student_registrations');
-            $table->float('score', 5, 2);
+            $table->float('score', 5, 2)->nullable();
             $table->timestamps();
         });
 

@@ -16,9 +16,6 @@ class RecruitmentPeriod extends Model
      */
     protected $fillable = [
         'period_name',
-        'batch',
-        'date_start',
-        'date_end',
     ];
 
     /**
@@ -28,7 +25,5 @@ class RecruitmentPeriod extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'date_start' => 'date',
-        'date_end' => 'date',
     ];
 }

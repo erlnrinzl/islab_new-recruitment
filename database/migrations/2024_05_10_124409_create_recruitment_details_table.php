@@ -19,6 +19,9 @@ class CreateRecruitmentDetailsTable extends Migration
             $table->id();
             $table->foreignId('type_id')->constrained('recruitment_types');
             $table->foreignId('period_id')->constrained('recruitment_periods');
+            $table->integer('batch');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->foreignId('major_id')->constrained('campus_majors');
             $table->integer('binusian');
             $table->float('gpa_required', 3, 2);

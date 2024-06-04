@@ -18,6 +18,7 @@ class CreateRecruitmentTypesTable extends Migration
         Schema::create('recruitment_types', function (Blueprint $table) {
             $table->id();
             $table->string('type_name');
+            $table->string('type_slug');
             $table->text('description');
             $table->string('icon');
             $table->timestamps();

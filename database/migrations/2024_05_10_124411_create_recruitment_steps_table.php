@@ -17,7 +17,7 @@ class CreateRecruitmentStepsTable extends Migration
 
         Schema::create('recruitment_steps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('detail_id')->constrained('recruitment_details');
+            $table->foreignId('type_id')->constrained('recruitment_types');
             $table->string('step_name');
             $table->integer('step_order');
             $table->text('step_description');

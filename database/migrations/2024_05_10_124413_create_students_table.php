@@ -25,6 +25,7 @@ class CreateStudentsTable extends Migration
             $table->foreignId('streamcourse_id')->nullable()->constrained('campus_stream_courses');
             $table->string('name');
             $table->string('domicile')->nullable();
+            $table->string('phone', 15)->nullable();
             $table->boolean('active_status')->default(true);
             $table->float('gpa', 3, 2);
             $table->timestamps();

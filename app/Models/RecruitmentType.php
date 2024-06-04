@@ -16,6 +16,7 @@ class RecruitmentType extends Model
      */
     protected $fillable = [
         'type_name',
+        'type_slug',
         'description',
         'icon',
     ];

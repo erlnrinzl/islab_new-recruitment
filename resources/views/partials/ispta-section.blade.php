@@ -22,6 +22,6 @@
             <br>
             a student from the School of Information Systems.
         </p>
-        <a href={{ url('/auth/redirect') }} class="btn">Register Now</a>
+        <a href={{ url('/login') }} class="btn">Register Now</a>
     </div>
 </div>

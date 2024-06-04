@@ -24,6 +24,6 @@
             <br>
             receiving guidance from senior IS Lab members.
         </p>
-        <a href={{ url('/auth/redirect') }} class="btn">Register Now</a>
+        <a href={{ url('/login') }} class="btn">Register Now</a>
     </div>
 </div>

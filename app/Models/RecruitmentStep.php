@@ -15,7 +15,7 @@ class RecruitmentStep extends Model
      * @var array
      */
     protected $fillable = [
-        'detail_id',
+        'type_id',
         'step_name',
         'step_order',
         'step_description',
@@ -29,12 +29,12 @@ class RecruitmentStep extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'detail_id' => 'integer',
+        'type_id' => 'integer',
         'step_score_min' => 'float',
     ];
 
-    public function detail()
+    public function type()
     {
-        return $this->belongsTo(RecruitmentDetail::class);
+        return $this->belongsTo(RecruitmentType::class);
     }
 }

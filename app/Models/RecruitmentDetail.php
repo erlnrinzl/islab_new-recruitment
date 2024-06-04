@@ -17,6 +17,9 @@ class RecruitmentDetail extends Model
     protected $fillable = [
         'type_id',
         'period_id',
+        'batch',
+        'date_start',
+        'date_end',
         'major_id',
         'binusian',
         'gpa_required',
@@ -31,6 +34,8 @@ class RecruitmentDetail extends Model
         'id' => 'integer',
         'type_id' => 'integer',
         'period_id' => 'integer',
+        'date_start' => 'date',
+        'date_end' => 'date',
         'major_id' => 'integer',
         'gpa_required' => 'float',
     ];

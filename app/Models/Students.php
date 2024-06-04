@@ -15,6 +15,7 @@ class Students extends Model
      * @var array
      */
     protected $fillable = [
+        'email',
         'nim',
         'user_id',
         'major_id',
@@ -22,6 +23,7 @@ class Students extends Model
         'streamcourse_id',
         'name',
         'domicile',
+        'phone',
         'active_status',
         'gpa',
     ];

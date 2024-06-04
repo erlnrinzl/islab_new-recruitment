@@ -18,9 +18,6 @@ class CreateRecruitmentPeriodsTable extends Migration
         Schema::create('recruitment_periods', function (Blueprint $table) {
             $table->id();
             $table->string('period_name');
-            $table->integer('batch');
-            $table->date('date_start');
-            $table->date('date_end');
             $table->timestamps();
         });
 

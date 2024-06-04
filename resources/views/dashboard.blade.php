@@ -7,6 +7,17 @@
 
     <section class="dashboard-content">
         <div class="container">
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             <div class="row mt-4">
                 <div class="col">
                     <h3>Roles to Apply To</h3>
@@ -111,12 +122,12 @@
                             <tr>
                                 <th>ISPM</th>
                                 <td>2022/2023</td>
-                                <td>Rejected</td>
+                                <td>Accepted</td>
                             </tr>
                             <tr>
                                 <th>ISCSC</th>
                                 <td>2022/2023</td>
-                                <td>Rejected</td>
+                                <td>Accepted</td>
                             </tr>
                         </tbody>
                     </table>

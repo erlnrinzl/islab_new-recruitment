@@ -23,5 +23,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/form', [FormController::class, 'index'])->middleware(['auth'])->name('form');
+Route::post('/register', [FormController::class, 'store'])->middleware(['auth'])->name('register');
 
 require __DIR__ . '/auth.php';
