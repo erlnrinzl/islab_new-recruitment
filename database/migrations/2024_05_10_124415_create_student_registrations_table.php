@@ -19,7 +19,7 @@ class CreateStudentRegistrationsTable extends Migration
             $table->id();
             $table->foreignId('student_id')->constrained('students');
             $table->foreignId('detail_id')->constrained('recruitment_details');
-            $table->foreignId('status_id')->constrained('student_registration_status');
+            $table->foreignId('status_id')->constrained('student_registration_statuses');
             $table->timestamps();
         });
 

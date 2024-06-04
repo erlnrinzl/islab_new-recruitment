@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\Models\CampusCourse;
 use App\Models\Student;
 use App\Models\StudentCourse;
+use App\Models\Students;
 
 class StudentCourseFactory extends Factory
 {
@@ -26,8 +27,8 @@ class StudentCourseFactory extends Factory
     {
         return [
             'course_id' => CampusCourse::factory(),
-            'student_id' => Student::factory(),
-            'student_grade' => $this->faker->randomFloat(0, 0, 99999.),
+            'student_id' => mt_rand(1, 31),
+            'student_grade' => $this->faker->randomFloat(0, 0, 4.),
         ];
     }
 }

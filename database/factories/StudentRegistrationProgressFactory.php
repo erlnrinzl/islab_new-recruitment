@@ -27,7 +27,7 @@ class StudentRegistrationProgressFactory extends Factory
         return [
             'step_id' => RecruitmentStep::factory(),
             'registration_id' => StudentRegistration::factory(),
-            'score' => $this->faker->randomFloat(0, 0, 99999.),
+            'score' => $this->faker->randomFloat(0, 0, 100.),
         ];
     }
 }

@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\RecruitmentDetail;
 use App\Models\RecruitmentStep;
+use App\Models\RecruitmentType;
 
 class RecruitmentStepFactory extends Factory
 {
@@ -24,11 +24,11 @@ class RecruitmentStepFactory extends Factory
     public function definition()
     {
         return [
-            'detail_id' => RecruitmentDetail::factory(),
+            'type_id' => RecruitmentType::factory(),
             'step_name' => $this->faker->word,
             'step_order' => $this->faker->numberBetween(-10000, 10000),
             'step_description' => $this->faker->text,
-            'step_score_min' => $this->faker->randomFloat(0, 0, 99999.),
+            'step_score_min' => $this->faker->randomFloat(0, 0, 4.),
         ];
     }
 }

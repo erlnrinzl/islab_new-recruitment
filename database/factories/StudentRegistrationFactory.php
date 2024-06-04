@@ -3,11 +3,10 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\RecruitmentDetail;
-use App\Models\Student;
 use App\Models\StudentRegistration;
 use App\Models\StudentRegistrationStatus;
+use App\Models\Students;
 
 class StudentRegistrationFactory extends Factory
 {
@@ -26,7 +25,7 @@ class StudentRegistrationFactory extends Factory
     public function definition()
     {
         return [
-            'student_id' => Student::factory(),
+            'student_id' => mt_rand(1, 31),
             'detail_id' => RecruitmentDetail::factory(),
             'status_id' => StudentRegistrationStatus::factory(),
         ];

@@ -15,7 +15,7 @@ class CreateStudentRegistrationStatusesTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('student_registration_status', function (Blueprint $table) {
+        Schema::create('student_registration_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('status_name');
             $table->timestamps();

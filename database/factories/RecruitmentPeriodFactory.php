@@ -24,9 +24,6 @@ class RecruitmentPeriodFactory extends Factory
     {
         return [
             'period_name' => $this->faker->word,
-            'batch' => $this->faker->numberBetween(-10000, 10000),
-            'date_start' => $this->faker->date(),
-            'date_end' => $this->faker->date(),
         ];
     }
 }

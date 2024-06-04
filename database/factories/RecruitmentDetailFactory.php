@@ -26,11 +26,14 @@ class RecruitmentDetailFactory extends Factory
     public function definition()
     {
         return [
-            'type_id' => RecruitmentType::factory(),
+            'type_id' => mt_rand(1, 3),
             'period_id' => RecruitmentPeriod::factory(),
             'major_id' => CampusMajor::factory(),
             'binusian' => $this->faker->numberBetween(-10000, 10000),
-            'gpa_required' => $this->faker->randomFloat(0, 0, 99999.),
+            'gpa_required' => $this->faker->randomFloat(0, 0, 4.),
+            'batch' => $this->faker->numberBetween(-10000, 10000),
+            'date_start' => $this->faker->date(),
+            'date_end' => $this->faker->date(),
         ];
     }
 }

@@ -24,6 +24,7 @@ class RecruitmentTypeFactory extends Factory
     {
         return [
             'type_name' => $this->faker->word,
+            'type_slug' => $this->faker->slug(1),
             'description' => $this->faker->text,
             'icon' => $this->faker->word,
         ];

@@ -27,7 +27,7 @@ class RecruitmentScoreRequirementFactory extends Factory
         return [
             'course_id' => CampusCourse::factory(),
             'detail_id' => RecruitmentDetail::factory(),
-            'course_score_min' => $this->faker->randomFloat(0, 0, 99999.),
+            'course_score_min' => $this->faker->randomFloat(0, 0, 4.),
         ];
     }
 }
