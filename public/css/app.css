@@ -24725,12 +24725,12 @@ h1 {
   width: 100%;
 }
 
-.row {
+.row-detail {
   display: flex;
   justify-content: space-between;
 }
 
-.col {
+.col-detail {
   width: 48%;
   text-align: left;
 }

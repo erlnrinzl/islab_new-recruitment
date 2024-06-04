@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('detail-pendaftar-iscsc');
+    return view('landing-page');
 });
 
 Route::get('/dashboard', function () {

@@ -3,13 +3,13 @@
         <div id="carouselFadeiscsc" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="1500">
-                <img src="/image/image-6.png" class="d-block" alt="">
+                <img src="/image/iscsc-1.png" class="d-block" alt="">
               </div>
               <div class="carousel-item" data-bs-interval="1500">
-                <img src="/image/image-9.png" class="d-block" alt="...">
+                <img src="/image/iscsc-2.png" class="d-block" alt="...">
               </div>
               <div class="carousel-item" data-bs-interval="1500">
-                <img src="/image/image-8.png" class="d-block" alt="...">
+                <img src="/image/iscsc-3.png" class="d-block" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFadeiscsc" data-bs-slide="prev">

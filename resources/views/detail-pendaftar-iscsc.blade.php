@@ -12,8 +12,8 @@
                 <img src="/image/dummy-photo.jpg" alt="Profile Picture" class="profile-pic">
                 <div class="container-detail">
                     <div class="details">
-                        <div class="row">
-                            <div class="col">
+                        <div class="row-detail">
+                            <div class="col-detail">
                                 <p><strong>Nama Lengkap</strong><br><span class="detail-text">Matthew Christian Hansel Budiono</span></p>
                                 <p><strong>NIM</strong><br><span class="detail-text">260209366</span></p>
                                 <p><strong>Jurusan</strong><br><span class="detail-text">Business Information Technology</span></p>
