@@ -7,7 +7,6 @@
         </h2>
     </x-slot>
 
-
     <div class="container mt-2 pb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
