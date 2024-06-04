@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin-home-ISPM');
+    return view('admin-eligibilitas-PTA');
 });
 
 Route::get('/dashboard', function () {

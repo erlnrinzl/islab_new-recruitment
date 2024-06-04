@@ -1,4 +1,50 @@
-<x-app-layout>
+@extends('layouts.admin')
+@section('container')
+<div class="container-fluid">
+    <div class="row d-flex mt-2 text-center">
+        <div class="col">
+            <h3>Eligibilitas IPK [Part Time Assistant]</h3>
+        </div>
+    </div>
+    @include('partials.dropdown-table')
+    <div class="row mt-4">
+        <div class="col">
+            <table class="table table-bordered table-progress">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">NIM</th>
+                        <th scope="col">Posisi</th>
+                        <th scope="col">Jurusan</th>
+                        <th scope="col">Kampus Area</th>
+                        <th scope="col">Min. IPK</th>
+                        <th scope="col">IPK</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>placeholder</td>
+                        <td>
+                            <button class="btn btn-primary upload-btn">Upload</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@endsection
+
+{{-- <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('') }}
@@ -49,7 +95,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="mt-4 mb-4 dropdown-container">
-                    <h3 class="dropdown-title">Eligibilitas IPK [Part Time Assistant]</h3>
+                    <h3 class="dropdown-title"></h3>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Periode
@@ -94,38 +140,9 @@
                 </div>
 
                 <div class="mb-4">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">NIM</th>
-                                <th scope="col">Posisi</th>
-                                <th scope="col">Jurusan</th>
-                                <th scope="col">Kampus Area</th>
-                                <th scope="col">Min. IPK</th>
-                                <th scope="col">IPK</th>
-                                <th scope="col">Status</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>placeholder</td>
-                                <td>
-                                    <button class="btn btn-primary upload-btn">Upload</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}
