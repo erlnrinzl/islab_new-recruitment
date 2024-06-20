@@ -25,19 +25,6 @@
             </div>
             <div class="row mt-2">
                 <div class="col">
-                    <a href={{ url('form?form=iscsc') }}>
-                        <div class="iscsc-hero text-start d-flex align-items-end">
-                            <h3 class="large-display ms-3">
-                                Information System Case </br>
-                                Study Club Member
-                            </h3>
-                            <h3 class="small-display ms-3">
-                                ISCSC
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
                     <a href={{ url('form?form=ispta') }}>
                         <div class=" iscsc-hero hero-2 text-start d-flex align-items-end">
                             <h3 class="large-display ms-3">
@@ -46,6 +33,19 @@
                             </h3>
                             <h3 class="small-display ms-3">
                                 PTA
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href={{ url('form?form=iscsc') }}>
+                        <div class="iscsc-hero text-start d-flex align-items-end">
+                            <h3 class="large-display ms-3">
+                                Information System Case </br>
+                                Study Club Member
+                            </h3>
+                            <h3 class="small-display ms-3">
+                                ISCSC
                             </h3>
                         </div>
                     </a>

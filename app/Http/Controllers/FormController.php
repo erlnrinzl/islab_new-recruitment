@@ -39,7 +39,7 @@ class FormController extends Controller
             ->where('binusian', substr($student->nim,0,2))
             ->join('recruitment_periods', 'recruitment_details.period_id', '=', 'recruitment_periods.id')
             ->join('recruitment_types', 'recruitment_details.type_id', '=', 'recruitment_types.id')
-            ->select('recruitment_details.id','recruitment_periods.period_name', 'recruitment_types.type_name')
+            ->select('recruitment_details.id','recruitment_periods.period_name', 'recruitment_types.type_name', 'recruitment_types.type_slug')
             ->first();
 
         if (!$recruitment) {
