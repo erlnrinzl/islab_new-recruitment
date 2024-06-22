@@ -1,5 +1,3 @@
-
-
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2063,6 +2061,10 @@ module.exports = {
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+var hamBurger = document.querySelector(".toggle-btn");
+hamBurger.addEventListener("click", function () {
+  document.querySelector("#sidebar").classList.toggle("expand");
+});
 
 /***/ }),
 
@@ -19713,45 +19715,3 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 	
 /******/ })()
 ;
-
-
-//******************** SCRIPT FOR PAGES ***********************
-document.addEventListener('DOMContentLoaded', () => {
-  const checkHead = document.querySelector(".table-progress thead tr input")
-  const tableRow = document.querySelectorAll(".table-progress tbody tr");
-  const rowCheck = document.querySelectorAll(".table-progress tbody tr input");
-  checkHead.addEventListener('click', () => {
-    rowCheck.forEach(inputCheck => {
-      if(checkHead.checked == false) {
-        inputCheck.checked = false;
-      } else if(checkHead.checked == true) {
-        inputCheck.checked = true;
-      } else {
-        inputCheck = false;
-      }
-    })
-  })
-  tableRow.forEach(row => {
-    row.addEventListener('click', () => {
-        const checkBox = row.querySelector("input[type='checkbox']");;
-        if(checkBox.checked == false) {
-          checkBox.checked = true;
-        } else {
-          checkBox.checked = false;
-        }
-    })
-  })
-});
-
-
-document.querySelector('.dropzone').addEventListener('change', function(event) {
-  const fileInput = event.target;
-  const fileName = fileInput.files[0] ? fileInput.files[0].name : '';
-  document.querySelector('.preview-file-name').textContent = fileName;
-});
-
-document.querySelector(".btn.btn-reset.btn-secondary").addEventListener ('click',() => {
-  const fileInput = document.querySelector('.dropzone');
-  fileInput.value = '';
-  document.querySelector('.preview-file-name').textContent = '';
-})

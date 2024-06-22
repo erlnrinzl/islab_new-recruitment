@@ -49,3 +49,32 @@ footer p {
   font-size: 10px;
   font-family: "Open Sans", sans-serif;
 }
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+aside.sidebar {
+  background-color: #0096D9;
+  min-width: 36vh;
+}
+
+main .navbar {
+  min-height: 8vh;
+}

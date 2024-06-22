@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\RecruitmentPeriodController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +28,9 @@ Route::get('/form', [FormController::class, 'index'])->middleware(['auth'])->nam
 Route::post('/register', [FormController::class, 'store'])->middleware(['auth'])->name('register');
 
 require __DIR__ . '/auth.php';
+
+Route::get('/admin', function () {
+    return view('admin-pendaftar-ISCSC');
+});
+Route::get('/admin/settings', [SettingController::class, 'index']);
+Route::get('/admin/recruitment-period', [RecruitmentPeriodController::class, 'index']);
