@@ -19,7 +19,7 @@ class RecruitmentPeriodController extends Controller
      */
     public function create()
     {
-        //
+        return view('recruitment-period.create');
     }
 
     /**

@@ -1,5 +1,6 @@
 @extends('layouts.admin-v2')
 @section('container')
+    {{ Breadcrumbs::render('recruitment-period') }}
     <h2>Periode Pendaftaran</h2>
 
     <div class="card">
