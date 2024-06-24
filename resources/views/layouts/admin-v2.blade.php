@@ -52,6 +52,9 @@
                                 <a class="nav-link" href="/admin/recruitment-period">Periode Pendaftaran</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="/admin/recruitment-detail">Detail Periode Pendaftaran</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">Tahapan Pendaftaran</a>
                             </li>
                             <li class="nav-item">

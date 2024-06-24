@@ -9,72 +9,51 @@ class RecruitmentPeriodController extends Controller
 {
     public function index()
     {
-        return view('recruitment-period.index');
+        $recruitmentPeriods = RecruitmentPeriod::all();
+
+        return view('recruitment-period.index', compact('recruitmentPeriods'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('recruitment-period.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        // $validatedData = $request->validate([
+        //     'period_name' => 'required'
+        // ]);
+
+        RecruitmentPeriod::create([
+            'period_name' => $request["period_name"]
+        ]);
+
+        return redirect()->route('recruitment-period.index')->with('message', 'New recruitment period created!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\RecruitmentPeriod  $recruitmentPeriod
-     * @return \Illuminate\Http\Response
-     */
     public function show(RecruitmentPeriod $recruitmentPeriod)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\RecruitmentPeriod  $recruitmentPeriod
-     * @return \Illuminate\Http\Response
-     */
     public function edit(RecruitmentPeriod $recruitmentPeriod)
     {
-        //
+        return view('recruitment-period.edit', compact('recruitmentPeriod'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RecruitmentPeriod  $recruitmentPeriod
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, RecruitmentPeriod $recruitmentPeriod)
     {
-        //
+        $recruitmentPeriod->update([
+            'period_name' => $request["period_name"]
+        ]);
+
+        return redirect()->route('recruitment-period.index')->with('message', 'Recruitment period updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\RecruitmentPeriod  $recruitmentPeriod
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(RecruitmentPeriod $recruitmentPeriod)
     {
-        //
+        $recruitmentPeriod->delete();
+        return redirect()->route('recruitment-period.index')->with('message', 'Recruitment period deleted successfully!');
     }
 }

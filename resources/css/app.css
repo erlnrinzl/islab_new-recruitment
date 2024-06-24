@@ -36,7 +36,7 @@
 .btn {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
-  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -67,7 +67,8 @@ li {
 
 .wrapper {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 aside.sidebar {
