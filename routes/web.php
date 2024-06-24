@@ -3,8 +3,8 @@
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\RecruitmentDetailController;
 use App\Http\Controllers\RecruitmentPeriodController;
+use App\Http\Controllers\RecruitmentTypeController;
 use App\Http\Controllers\SettingController;
-use App\Models\RecruitmentPeriod;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,5 +36,6 @@ Route::get('/admin', function () {
 });
 Route::get('/admin/settings', [SettingController::class, 'index']);
 
-Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class)->except('show');
+Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class);
 Route::resource('/admin/recruitment-detail', RecruitmentDetailController::class);
+Route::resource('/admin/recruitment-type', RecruitmentTypeController::class);

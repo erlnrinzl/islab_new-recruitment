@@ -58,7 +58,7 @@
                                 <a class="nav-link" href="#">Tahapan Pendaftaran</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Recruitment Type</a>
+                                <a class="nav-link" href="/admin/recruitment-type">Recruitment Type</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Eligibilitas IPK</a>
