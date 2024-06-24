@@ -11,7 +11,7 @@ use App\Models\StudentRegistration;
 use App\Models\StudentRegistrationProgress;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class FormController extends Controller
 {
@@ -32,25 +32,30 @@ class FormController extends Controller
         
         $current_date = Carbon::now();
 
-        $recruitment = RecruitmentDetail::where('type_id', $recruitmentType->id)
-            ->where('date_start', '<=', $current_date)
-            ->where('date_end', '>=', $current_date)
+        $recruitment_query = RecruitmentDetail::where('type_id', $recruitmentType->id)
             ->where('major_id', $student->major_id)
             ->where('binusian', substr($student->nim,0,2))
             ->join('recruitment_periods', 'recruitment_details.period_id', '=', 'recruitment_periods.id')
             ->join('recruitment_types', 'recruitment_details.type_id', '=', 'recruitment_types.id')
-            ->select('recruitment_details.id','recruitment_periods.period_name', 'recruitment_types.type_name', 'recruitment_types.type_slug')
-            ->first();
+            ->select('recruitment_details.id','recruitment_periods.period_name', 'recruitment_types.type_name', 'recruitment_types.type_slug');
+
+        $recruitment = $recruitment_query->get();
 
         if (!$recruitment) {
-            return redirect()->route('dashboard')->with('error', "You're not eligible to register {$recruitmentType->type_name} role");
+            return redirect()->route('dashboard')->with('error', "You're not eligible to register {{Str::upper($recruitmentType->type_slug)}} role.");
         }
         
-        $registrationData = StudentRegistration::where('student_id', $student->id)->where('detail_id', $recruitment->id)->first();
+        $recruitment_open = $recruitment_query->where('date_start', '<=', $current_date)->where('date_end', '>=', $current_date)->first();
 
-        if ($registrationData) {
-            return redirect()->route('dashboard')->with('error', "You're already registered {$recruitmentType->type_name} role in {$recruitment->period_name} periods.");
+        if (!$recruitment_open) {
+            return redirect()->route('dashboard')->with('error', "There is no recruitment for ".Str::upper($recruitmentType->type_slug)." roles available yet.");
         }
+
+        // $registrationData = StudentRegistration::where('student_id', $student->id)->where('detail_id', $recruitment->id)->first();
+
+        // if ($registrationData) {
+        //     return redirect()->route('dashboard')->with('error', "You're already registered {$recruitmentType->type_name} role in {$recruitment->period_name} periods.");
+        // }
 
         cookie()->queue(cookie('recruitmentTypeId', $recruitmentType->id, 60));
 
@@ -62,7 +67,7 @@ class FormController extends Controller
         return view('form', [
             'student' => $student,
             'stream_course' => $stream_course,
-            'recruitment' => $recruitment
+            'recruitment' => $recruitment_open
         ]);
     }
 

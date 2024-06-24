@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('landing-page');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/admin', function () {
+    return view('admin-pendaftar-pta');
+})->middleware(['auth'])->name('admin');
 
 Route::get('/form', [FormController::class, 'index'])->middleware(['auth'])->name('form');
 Route::post('/register', [FormController::class, 'store'])->middleware(['auth'])->name('register');
