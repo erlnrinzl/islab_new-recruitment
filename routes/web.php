@@ -30,18 +30,15 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin-{type}', function ($type) {
-        return view('admin-pendaftar-pta');
-    })->name('admin.dashboard');
+    // Route::get('/admin-{type}', function ($type) {
+    //     return view('admin-pendaftar-pta');
+    // })->name('admin.dashboard');
+
+    Route::get('/admin/settings', [SettingController::class, 'index']);
+
+    Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class);
+    Route::resource('/admin/recruitment-detail', RecruitmentDetailController::class);
+    Route::resource('/admin/recruitment-type', RecruitmentTypeController::class);
 });
 
 require __DIR__ . '/auth.php';
-
-Route::get('/admin', function () {
-    return view('admin-pendaftar-ISCSC');
-});
-Route::get('/admin/settings', [SettingController::class, 'index']);
-
-Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class);
-Route::resource('/admin/recruitment-detail', RecruitmentDetailController::class);
-Route::resource('/admin/recruitment-type', RecruitmentTypeController::class);
