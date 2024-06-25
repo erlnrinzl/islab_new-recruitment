@@ -15,4 +15,5 @@ yarn-error.log
 .vscode
 draft.yaml
 .blueprint
-.DS_Store
+.DS_Store/draft.yaml
+/.blueprint

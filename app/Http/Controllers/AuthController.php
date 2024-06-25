@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Students;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -35,8 +36,16 @@ class AuthController extends Controller
             Auth::login($authUser);
             return redirect()->route('dashboard');
         } else {
-            Session::flash('error', 'Data kamu tidak ditemukan');
-            return redirect()->route('login');
+            $admin = Admin::where('email', $user->getEmail())->first();
+
+            if ($admin) {
+                $authUser = $this->findOrCreateUser($user);
+                Auth::login($authUser);
+                return redirect()->route('admin.dashboard');
+            } else {
+                Session::flash('error', 'Data kamu tidak ditemukan');
+                return redirect()->route('login');
+            }
         }
     }
 
@@ -52,10 +61,24 @@ class AuthController extends Controller
                 'email' => $socialUser->getEmail()
             ]);
 
-            $student = Students::where('email', $socialUser->getEmail())->first();
-            $student->user_id = $user->id;
-            $student->save();
-            
+            $domain = explode('@', $socialUser->getEmail())[1];
+
+            if ($domain === 'binus.ac.id') {
+                $user->assignRole('mahasiswa');
+                $user->givePermissionTo('register-recruitment');
+                $student = Students::where('email', $socialUser->getEmail())->first();
+                $student->user_id = $user->id;
+                $student->save();
+            } elseif ($domain === 'gmail.com') {
+                $admin = Admin::where('email', $socialUser->getEmail())->first();
+                $type = $admin->type;
+                $user->assignRole('admin-' . $type->type_slug);
+                $user->givePermissionTo('manage-' . $type->type_slug);
+
+                $admin->user_id = $user->id;
+                $admin->save();
+            }
+    
             return $user;
         }
     }
