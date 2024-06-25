@@ -80,27 +80,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($current_progress as $current_item)
                             <tr>
-                                <th>ISPM</th>
-                                <td>75</td>
-                                <td>In Review</td>
-                                <td>-</td>
-                                <td>50%</td>
+                                <th>{{ Str::upper($current_item['type']).' - '.$current_item['period_name'] }}</th>
+                                @foreach ($current_item['progress'] as $score)
+                                    <td>@if (!is_null($score))
+                                        {{ $score }}
+                                    @else {{ $current_item['status_name'] }}
+                                    @endif</td>
+                                @endforeach
+                                @if(count($current_item['progress']) < 3)
+                                    @for ($i = 0; $i < 3-count($current_item['progress']); $i++)
+                                        <td>Not Opened Yet</td>
+                                    @endfor
+                                @endif
+                                <td>
+                                    {{ number_format($current_item['average_progress']*100, 2) }}%
+                                </td>
                             </tr>
-                            <tr>
-                                <th>ISPTA</th>
-                                <td>75</td>
-                                <td>In Review</td>
-                                <td>-</td>
-                                <td>50%</td>
-                            </tr>
-                            <tr>
-                                <th>ISCSC</th>
-                                <td>75</td>
-                                <td>In Review</td>
-                                <td>-</td>
-                                <td>50%</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -119,16 +117,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>ISPM</th>
-                                <td>2022/2023</td>
-                                <td>Accepted</td>
-                            </tr>
-                            <tr>
-                                <th>ISCSC</th>
-                                <td>2022/2023</td>
-                                <td>Accepted</td>
-                            </tr>
+                            @if (count($past_reg)>0)
+                                @foreach ($past_reg as $past_item)
+                                <tr>
+                                    <td>{{ Str::upper($past_item['type']) }}</td>
+                                    <td>{{ $past_item['period_name'] }}</td>
+                                    <td>{{ $past_item['status_name'] }}</td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="3">You have not applied for IS Laboratory recruitment yet.</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>
