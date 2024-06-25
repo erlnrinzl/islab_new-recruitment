@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\RecruitmentDetailController;
+use App\Http\Controllers\RecruitmentPeriodController;
+use App\Http\Controllers\RecruitmentTypeController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +36,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('/admin', function () {
+    return view('admin-pendaftar-ISCSC');
+});
+Route::get('/admin/settings', [SettingController::class, 'index']);
+
+Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class);
+Route::resource('/admin/recruitment-detail', RecruitmentDetailController::class);
+Route::resource('/admin/recruitment-type', RecruitmentTypeController::class);

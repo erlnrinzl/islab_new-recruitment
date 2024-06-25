@@ -36,7 +36,7 @@
 .btn {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
-  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -48,4 +48,34 @@ footer h3 {
 footer p {
   font-size: 10px;
   font-family: "Open Sans", sans-serif;
+}
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+}
+
+aside.sidebar {
+  background-color: #0096D9;
+  min-width: 36vh;
+}
+
+main .navbar {
+  min-height: 8vh;
 }

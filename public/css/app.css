@@ -24369,8 +24369,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-
-/* ======== STYLING PAGE ========== */
 * {
   font-family: "Open Sans", sans-serif;
 }
@@ -24388,43 +24386,13 @@ textarea.form-control-lg {
 }
 
 #hero {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
-/* .right.carousel-control, .left.carousel-control {
-  display: none;
+/* #hero img {
+  margin-left: -20px;
+  height: 680px;
 } */
-
-#hero img {
-  margin: 0px;
-  width: auto;
-  height: 680px;
-}
-
-#iscsc-hero img {
-  /* overflow: hidden; */
-  width: auto;
-  margin: 0px;
-  height: 680px;
-}
-
-.p-section {
-  text-align: justify;
-  width: 600px;
-}
-
-#carouselFadeispta {
-  margin-right: -12px;
-}
-
-#carouselFadeiscsc {
-  margin-left: -12px;
-}
-
-#carouselFadeispm {
-  margin-right: -12px;
-}
-
 
 #content {
   background-color: white;
@@ -24437,7 +24405,7 @@ textarea.form-control-lg {
 .btn {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
-  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -24451,287 +24419,32 @@ footer p {
   font-family: "Open Sans", sans-serif;
 }
 
-/* Dashboard-User */
-.iscsc-hero {
-  position: relative;
-  overflow: hidden;
-  background-color: #080808;
-  height: 140px;
-  width: calc 435px;
-  border-radius: 15px;
-  background: url('../image/image-9.png');
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-  transition-timing-function: ease-in;
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.iscsc-hero::before{
-  position: absolute;
-  z-index: 1;
-  content: "";
-  width: 100%;
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
   height: 100%;
-  display: block;
-  background-color: black;
-  opacity: 45%;
 }
 
-.iscsc-hero:hover {
-  background-image: none;
+aside.sidebar {
   background-color: #0096D9;
+  min-width: 36vh;
 }
 
-.iscsc-hero:hover::before {
-  opacity: 0;
-}
-
-.hero-2 {
-  background: url('../image/image-6.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-3 {
-  background: url('../image/image-8.png');
-  background-size: cover;
-  background-position: center;
-}
-
-
-.iscsc-hero h3 {
-  text-decoration: none;
-  position: relative;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  z-index: 2;
-}
-
-.iscsc-hero a {
-  text-decoration: none;
-}
-
-.table-progress thead th {
-  color: white;
-  background-color: #0096D9;
-}
-.table-progress thead th {
-  color: white;
-  background-color: #0096D9;
-}
-
-@media only screen 
-   and (max-width : 320px) {
-    .large-display {
-      display: none;
-    }
-}
-
-@media only screen 
-   and (max-width : 992px) {
-    .large-display {
-      display: none;
-    }
-}
-
-@media only screen 
-   and (min-width : 992px) {
-    .small-display {
-      display: none;
-    }
-}
-
-/* Style untuk Tahapan */
-.dropdown-filter button {
-  /* background-color: white; */
-  border-radius: 20px;
-}
-.dropdown-filter img {
-  /* background-color: white; */
-  height: 20px;
-}
-
-.btn-divider {
-  margin-left: 400px;
-}
-
-.modal input {
-  color: white;
-  background-color: #0096D9;
-}
-
-.modal .form-select {
-  color: white;
-  background-color: #0096D9;
-}
-
-/* detail */
-.form-select {
-  width: 120px;
-}
-.btn-detail {
-  width: 100px;
-  background-color: #0096D9;
-  color: white;
-  border-radius: 20px;
-}
-
-.box {
-  position: relative;
-  background: #ffffff;
-  width: 100%;
-}
-.box-header {
-  color: #444;
-  display: block;
-  padding: 10px;
-  position: relative;
-  border-bottom: 1px solid #f4f4f4;
-  margin-bottom: 10px;
-}
-
-.modal-body h3 {
-  font-size: 20px;
-}
-
-#addModal .modal-content {
-  color: white;
-  background-color: #194B56;
-  border-radius: 40px;
-}
-.dropzone-wrapper {
-  border: 2px solid #91b0b3;
-  color: #92b0b3;
-  background-color: white;
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-
-.dropzone-desc {
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  width: 60%;
-  top: 50px;
-  font-size: 12px;
-}
-.dropzone,
-.dropzone:focus {
-  position: absolute;
-  outline: none !important;
-  width: 100%;
-  height: 200px;
-  cursor: pointer;
-  opacity: 0;
-}
-.dropzone-wrapper:hover,
-.dropzone-wrapper.dragover {
-  background: gainsboro;
-}
-.preview-zone {
-  text-align: center;
-}
-.preview-zone .box {
-  box-shadow: none;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
-.detail-button {
-  background-color: #0096D9;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-
-/* detail */
-/* h1 {
-  text-align: center;
-  color: #333;
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 20px;
-} */
-
-.title-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.page-title {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 600;
-  color: #4A4A4A;
-}
-
-.profile-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
-.container-detail {
-  width: 80vw; /* Adjust the width to be 90% of the viewport width */
-  max-width: 1200px; /* Set a maximum width to ensure it doesn't get too wide on large screens */
-  background-color: #ffffff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.details {
-  width: 100%;
-}
-
-.row-detail {
-  display: flex;
-  justify-content: space-between;
-}
-
-.col-detail {
-  width: 48%;
-  text-align: left;
-}
-
-/* p {
-  margin: 10px 0;
-  font-size: 15px;
-  line-height: 1.5;
-  font-weight: 800;
-}
-
-p strong {
-  font-size: 18px;
-  color: #000000;
-} */
-
-.detail-text {
-  margin-left: 20px;
-  color: #5B5B5B;
-  display: inline-block;
+main .navbar {
+  min-height: 8vh;
 }
