@@ -8,6 +8,14 @@
     {{-- <link rel="stylesheet" href="/css/tahapan.css"> --}}
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+
+
     <title>Admin</title>
 </head>
 
@@ -85,7 +93,7 @@
                                 <a class="nav-link" href="#">Eligibilitas Nilai Matkul</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Tahapan Pendaftaran</a>
+                                <a class="nav-link" href="/admin/recruitment-step">Tahapan Pendaftaran</a>
                             </li>
                         </ul>
                     </div>
@@ -212,9 +220,13 @@
         </main>
 
     </div>
+    @include('partials.footer')
 
     <script src="/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
 </body>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RecruitmentType extends Model
 {
@@ -29,4 +30,9 @@ class RecruitmentType extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function steps()
+    {
+        return $this->hasMany(RecruitmentStep::class);
+    }
 }
