@@ -47,7 +47,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('/admin/recruitment-detail', AdminRecruitmentDetailController::class);
     Route::resource('/admin/recruitment-type', AdminRecruitmentTypeController::class);
 
-    Route::resource('/admin/registrant', AdminRegistrantsController::class);
+    // Route::resource('/admin/registrant', AdminRegistrantsController::class);
+    Route::get('/admin/registrant/export/', [AdminRegistrantsController::class, 'export']);
+
 });
 
 require __DIR__ . '/auth.php';

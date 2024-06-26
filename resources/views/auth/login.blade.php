@@ -16,7 +16,7 @@
                 </div>
             </div>
         @endif
-        <div class="row login-btn">
+        <div class="row">
             <div class="col d-flex justify-content-center p-5">
                 <a href="{{ url('/auth/redirect') }}">
                     <img height="67" src="image/login-button.png" alt="microsoft-login-button">
