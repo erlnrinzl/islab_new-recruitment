@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\RecruitmentPeriod;
 use Illuminate\Http\Request;
 
-class RecruitmentPeriodController extends Controller
+class AdminRecruitmentPeriodController extends Controller
 {
     public function index()
     {
         $recruitmentPeriods = RecruitmentPeriod::all();
 
-        return view('recruitment-period.index', compact('recruitmentPeriods'));
+        return view('admin.recruitment-period.index', compact('recruitmentPeriods'));
     }
 
     public function create()
     {
-        return view('recruitment-period.create');
+        return view('admin.recruitment-period.create');
     }
 
     public function store(Request $request)
@@ -39,7 +39,7 @@ class RecruitmentPeriodController extends Controller
 
     public function edit(RecruitmentPeriod $recruitmentPeriod)
     {
-        return view('recruitment-period.edit', compact('recruitmentPeriod'));
+        return view('admin.recruitment-period.edit', compact('recruitmentPeriod'));
     }
 
     public function update(Request $request, RecruitmentPeriod $recruitmentPeriod)

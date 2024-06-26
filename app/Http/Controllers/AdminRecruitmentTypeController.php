@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\RecruitmentType;
 use Illuminate\Http\Request;
 
-class RecruitmentTypeController extends Controller
+class AdminRecruitmentTypeController extends Controller
 {
     public function index()
     {
         $recruitmentTypes = RecruitmentType::all();
 
-        return view('recruitment-type.index', compact('recruitmentTypes'));
+        return view('admin.recruitment-type.index', compact('recruitmentTypes'));
     }
 
     public function create()
     {
-        return view('recruitment-type.create');
+        return view('admin.recruitment-type.create');
     }
 
     public function store(Request $request)
@@ -46,7 +46,7 @@ class RecruitmentTypeController extends Controller
 
     public function edit(RecruitmentType $recruitmentType)
     {
-        return view('recruitment-type.edit', compact('recruitmentType'));
+        return view('admin.recruitment-type.edit', compact('recruitmentType'));
     }
 
     public function update(Request $request, RecruitmentType $recruitmentType)

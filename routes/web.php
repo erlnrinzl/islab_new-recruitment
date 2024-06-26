@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\RecruitmentDetailController;
-use App\Http\Controllers\RecruitmentPeriodController;
-use App\Http\Controllers\RecruitmentTypeController;
+use App\Http\Controllers\AdminRecruitmentDetailController;
+use App\Http\Controllers\AdminRecruitmentPeriodController;
+use App\Http\Controllers\AdminRecruitmentTypeController;
+use App\Http\Controllers\AdminRegistrantsController;
+use App\Http\Controllers\AdminUserDataController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -30,15 +33,21 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
-    // Route::get('/admin-{type}', function ($type) {
-    //     return view('admin-pendaftar-pta');
-    // })->name('admin.dashboard');
+    Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
+    Route::get('/admin/user-admin', [AdminUserDataController::class, 'index_admin'])->name('admin.user-admin');
+    Route::get('/admin/user-mahasiswa', [AdminUserDataController::class, 'index_mahasiswa'])->name('admin.user-mahasiswa');
 
     Route::get('/admin/settings', [SettingController::class, 'index']);
 
-    Route::resource('/admin/recruitment-period', RecruitmentPeriodController::class);
-    Route::resource('/admin/recruitment-detail', RecruitmentDetailController::class);
-    Route::resource('/admin/recruitment-type', RecruitmentTypeController::class);
+    Route::resource('/admin/recruitment-period', AdminRecruitmentPeriodController::class);
+    Route::get('/admin/recruitment-detail/{type_slug}/{hashed_params}/edit', 'App\Http\Controllers\AdminRecruitmentDetailController@edit')->name('recruitment-detail.editMultiple'); 
+    Route::put('/admin/recruitment-detail/{type_slug}/{hashed_params}/update', 'App\Http\Controllers\AdminRecruitmentDetailController@update')->name('recruitment-detail.updateMultiple');
+    Route::delete('recruitment-detail/{type_slug}/{hashed_params}', 'App\Http\Controllers\AdminRecruitmentDetailController@destroy')->name('recruitment-detail.destroyMultiple');
+    Route::resource('/admin/recruitment-detail', AdminRecruitmentDetailController::class);
+    Route::resource('/admin/recruitment-type', AdminRecruitmentTypeController::class);
+
+    Route::resource('/admin/registrant', AdminRegistrantsController::class);
 });
 
 require __DIR__ . '/auth.php';

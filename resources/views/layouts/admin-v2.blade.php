@@ -8,7 +8,7 @@
     {{-- <link rel="stylesheet" href="/css/tahapan.css"> --}}
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Tahapan</title>
+    <title>Admin</title>
 </head>
 
 <body id='page-top'>
@@ -27,12 +27,42 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <!-- Nav Item - Dashboard -->
                 <li>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                         <i class="text-white-50 px-1 bi bi-speedometer"></i>
                         <span class="text-white">Dashboard</span>
                     </a>
                 </li>
                 <hr class="text-white">
+
+                <li class="nav-item py-2">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#collapse-superadmin" role="button"
+                        aria-expanded="false" aria-controls="collapse-superadmin">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <i class="text-white-50 px-1 bi bi-person-workspace"></i>
+                                <span class="text-white fs-6">Super Admin</span>
+                            </div>
+                            <i class="px-1 text-white bi bi-chevron-right"></i>
+                        </div>
+                    </a>
+
+                    <div class="collapse" id="collapse-superadmin">
+                        <ul class="ms-1 text-white">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/recruitment-type">Recruitment Type</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/recruitment-period">Periode Pendaftaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/user-admin">List Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/user-mahasiswa">List Mahasiswa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
                 <li class="nav-item py-2">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapse-recruitment" role="button"
@@ -49,22 +79,13 @@
                     <div class="collapse" id="collapse-recruitment">
                         <ul class="ms-1 text-white">
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin/recruitment-period">Periode Pendaftaran</a>
+                                <a class="nav-link" href="/admin/recruitment-detail">Periode dan Eligibilitas IPK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin/recruitment-detail">Detail Periode Pendaftaran</a>
+                                <a class="nav-link" href="#">Eligibilitas Nilai Matkul</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Tahapan Pendaftaran</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admin/recruitment-type">Recruitment Type</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Eligibilitas IPK</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Eligibilitas Mata Kuliah</a>
                             </li>
                         </ul>
                     </div>
@@ -84,13 +105,16 @@
                     <div class="collapse" id="collapse-registration">
                         <ul class="ms-1 text-white">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Upload IPK</a>
+                                <a class="nav-link" href="/admin/registrant">List Pendaftar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Upload Nilai Mata Kuliah</a>
+                                <a class="nav-link" href="#">Input IPK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Finalisasi Hasil</a>
+                                <a class="nav-link" href="#">Input Nilai Matkul</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Penilaian</a>
                             </li>
                         </ul>
                     </div>
@@ -157,7 +181,7 @@
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="px-1 bi bi-person"></i>
-                                <span class="fs-6">Username</span>
+                                <span class="fs-6">{{ Auth::user()->name }}</span>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-end">

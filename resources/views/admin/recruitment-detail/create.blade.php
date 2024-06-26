@@ -1,11 +1,10 @@
 @extends('layouts.admin-v2')
 @section('container')
-    {{ Breadcrumbs::render('recruitment-detail.edit', $recruitmentDetail) }}
+    {{ Breadcrumbs::render('recruitment-detail.create') }}
     <h2>Create New Recruitment Period Detail</h2>
 
-    <form action="{{ route('recruitment-detail.update', $recruitmentDetail->id) }}" method="POST">
+    <form action="{{ route('recruitment-detail.store') }}" method="POST">
         @csrf
-        @method('PUT')
         <div class="card mt-2">
             <div class="card-header">
                 Recruitment Period
@@ -18,13 +17,9 @@
                         </label>
                         <div class="input-group">
                             <select class="form-select" id="period_name_id" name="period_name_id" required>
-                                <option disabled value="default">Choose...</option>
-                                @foreach ($recruitmentPeriods as $period)
-                                    @if ($recruitmentDetail->period == $period)
-                                        <option selected value={{ $period->id }}>{{ $period->period_name }}</option>
-                                    @else
-                                        <option value={{ $period->id }}>{{ $period->period_name }}</option>
-                                    @endif
+                                <option selected disabled value="default">Choose...</option>
+                                @foreach ($recruitment_periods as $period)
+                                    <option value={{ $period->id }}>{{ $period->period_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -40,9 +35,8 @@
                             Batch
                         </label>
                         <div>
-                            <input type="text" class="form-control" placeholder="Batch number" id="batch"
-                                name="batch" value="{{ $recruitmentDetail->batch }}" required autocomplete="name"
-                                autofocus>
+                            <input type="number" class="form-control" placeholder="Batch number" id="batch"
+                                name="batch" value="{{ old('batch') }}" required autocomplete="name" autofocus>
                             @error('batch')
                                 <span class="invalid-tooltip" role="alert">
                                     {{ $message }}
@@ -58,8 +52,8 @@
                             </label>
                             <div>
                                 <input type="date" class="form-control" placeholder="Start date" id="date_start"
-                                    name="date_start" value="{{ $recruitmentDetail->date_start }}" required
-                                    autocomplete="bday" autofocus>
+                                    name="date_start" value="{{ old('date_start') }}" required autocomplete="bday"
+                                    autofocus>
                                 @error('date_start')
                                     <span class="invalid-tooltip" role="alert">
                                         {{ $message }}
@@ -76,8 +70,7 @@
                             </label>
                             <div>
                                 <input type="date" class="form-control" placeholder="End Date" id="date_end"
-                                    name="date_end" value="{{ $recruitmentDetail->date_end }}" required autocomplete="name"
-                                    autofocus>
+                                    name="date_end" value="{{ old('date_end') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-tooltip" role="alert">
                                         {{ $message }}
@@ -99,14 +92,10 @@
                                     name="recruitment_role_id" data-placeholder="Choose roles to be included"
                                     data-live-search="true" required>
 
-                                    <option disabled value="default">Choose...</option>
+                                    <option selected disabled value="default">Choose...</option>
 
-                                    @foreach ($recruitmentTypes as $type)
-                                        @if ($recruitmentDetail->type == $type)
-                                            <option selected value="{{ $type->id }}">{{ $type->type_slug }}</option>
-                                        @else
-                                            <option value="{{ $type->id }}">{{ $type->type_slug }}</option>
-                                        @endif
+                                    @foreach ($recruitment_types as $type)
+                                        <option value="{{ $type->id }}">{{ strtoupper($type->type_slug) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -120,21 +109,14 @@
                             </label>
 
                             <div>
-
-                                <select class="form-control selectpicker" id="recruitment_major_id"
-                                    name="recruitment_major_id" data-placeholder="Choose major to be included"
-                                    data-live-search="true" required>
-
-                                    <option selected disabled value="default">Choose...</option>
-
-                                    @foreach ($majors as $major)
-                                        @if ($recruitmentDetail->major == $major)
-                                            <option selected value="{{ $major->id }}">{{ $major->major_name }}</option>
-                                        @else
-                                            <option value="{{ $major->id }}">{{ $major->major_name }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
+                                @foreach($majors as $major)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="{{ $major->id }}" name="recruitment_major_id[]" id="major_{{ $major->id }}">
+                                        <label class="form-check-label" for="major_{{ $major->id }}">
+                                            {{ $major->major_name }}
+                                        </label>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -144,14 +126,14 @@
                             Binusian
                         </label>
                         <div>
-                            <input type="text" class="form-control" placeholder="Binusian year" id="binusian"
-                                name="binusian" value="{{ $recruitmentDetail->binusian }}" required autocomplete="name"
-                                autofocus>
-                            @error('binusian')
-                                <span class="invalid-tooltip" role="alert">
-                                    {{ $message }}
-                                </span>
-                            @enderror
+                            @foreach($binusians as $binusian)
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{ $binusian }}" name="binusian[]" id="binusian_{{ $binusian }}">
+                                    <label class="form-check-label" for="binusian_{{ $binusian }}">
+                                        B{{ $binusian }}
+                                    </label>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -161,8 +143,8 @@
                         </label>
                         <div>
                             <input type="text" class="form-control" placeholder="GPA" id="recruitment_gpa"
-                                name="recruitment_gpa" value="{{ $recruitmentDetail->gpa_required }}" required
-                                autocomplete="name" autofocus>
+                                name="recruitment_gpa" value="{{ old('recruitment_gpa') }}" required autocomplete="name"
+                                autofocus>
                             @error('recruitment_gpa')
                                 <span class="invalid-tooltip" role="alert">
                                     {{ $message }}
@@ -172,7 +154,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <button class="btn btn-success" type="submit"">Update</button>
+                        <button class="btn btn-success" type="submit">submit</button>
                     </div>
                 </div>
             </div>

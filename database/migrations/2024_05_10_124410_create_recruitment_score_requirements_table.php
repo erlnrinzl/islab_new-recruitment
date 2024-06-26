@@ -18,7 +18,7 @@ class CreateRecruitmentScoreRequirementsTable extends Migration
         Schema::create('recruitment_score_requirements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_id')->constrained('campus_courses');
-            $table->foreignId('detail_id')->constrained('recruitment_details');
+            $table->foreignId('detail_id')->constrained('recruitment_details')->onDelete('cascade');
             $table->float('course_score_min', 3, 2);
             $table->timestamps();
         });
