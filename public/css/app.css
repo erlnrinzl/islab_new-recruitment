@@ -24389,10 +24389,10 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 
-/* #hero img {
+#hero img {
   margin-left: -20px;
   height: 680px;
-} */
+}
 
 #content {
   background-color: white;
@@ -24408,6 +24408,10 @@ textarea.form-control-lg {
   /* box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); */
 }
 
+.login-btn {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
 
 footer h3 {
   font-size: 20px;

@@ -1,0 +1,170 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  background-color: #0096D9;
+}
+
+.icon-signin {
+  height: 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+#hero {
+  /* overflow: hidden; */
+}
+
+/* .right.carousel-control, .left.carousel-control {
+  display: none;
+} */
+
+#hero img {
+  margin: 0px;
+  width: auto;
+  height: 680px;
+}
+
+#iscsc-hero img {
+  /* overflow: hidden; */
+  width: auto;
+  margin: 0px;
+  height: 680px;
+}
+
+.p-section {
+  text-align: justify;
+  width: 600px;
+}
+
+#carouselFadeispta {
+  margin-right: -12px;
+}
+
+#carouselFadeiscsc {
+  margin-left: -12px;
+}
+
+#carouselFadeispm {
+  margin-right: -12px;
+}
+
+
+#content {
+  background-color: white;
+}
+
+/* .signin {
+    margin-left: 300px;
+} */
+
+.btn {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+footer h3 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+footer p {
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Dashboard-User */
+.iscsc-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #080808;
+  height: 140px;
+  width: calc 435px;
+  border-radius: 15px;
+  background: url('../image/image-9.png');
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.iscsc-hero::before{
+  position: absolute;
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: black;
+  opacity: 45%;
+}
+
+.iscsc-hero:hover {
+  background-image: none;
+  background-color: #0096D9;
+}
+
+.iscsc-hero:hover::before {
+  opacity: 0;
+}
+
+.hero-2 {
+  background: url('../image/image-6.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-3 {
+  background: url('../image/image-8.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.iscsc-hero h3 {
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.iscsc-hero a {
+  text-decoration: none;
+}
+
+.table-progress thead th {
+  color: white;
+  background-color: #0096D9;
+}
+.table-progress thead th {
+  color: white;
+  background-color: #0096D9;
+}
+
+@media only screen 
+   and (max-width : 320px) {
+    .large-display {
+      display: none;
+    }
+}
+
+@media only screen 
+   and (max-width : 992px) {
+    .large-display {
+      display: none;
+    }
+}
+
+@media only screen 
+   and (min-width : 992px) {
+    .small-display {
+      display: none;
+    }
+}
