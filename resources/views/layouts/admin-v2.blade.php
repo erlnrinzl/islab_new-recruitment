@@ -90,7 +90,8 @@
                                 <a class="nav-link" href="/admin/recruitment-detail">Periode dan Eligibilitas IPK</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Eligibilitas Nilai Matkul</a>
+                                <a class="nav-link" href="/admin/recruitment-course-eligibility">Eligibilitas Nilai
+                                    Matkul</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin/recruitment-step">Tahapan Pendaftaran</a>
