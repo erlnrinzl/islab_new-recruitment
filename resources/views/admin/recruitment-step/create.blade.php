@@ -1,14 +1,14 @@
 @extends('layouts.admin-v2')
 @section('container')
     {{-- {{ Breadcrumbs::render('recruitment-period.create') }} --}}
-    <h2>Create New Recruitment Steps</h2>
+    <h2>Buat Tahapan Pendaftaran</h2>
 
     <form action="{{ route('recruitment-step.store') }}" method="POST">
         @csrf
         <div class="card mt-2">
 
             <div class="card-header">
-                Recruitment Step
+                Tahapan Pendaftaran
             </div>
             <div class="card-body">
 
@@ -21,7 +21,7 @@
 
                             <div>
                                 <select class="form-control selectpicker" id="recruitment_role_id"
-                                    name="recruitment_role_id" data-placeholder="Choose roles to be included"
+                                    name="recruitment_role_id" data-placeholder="Pilih role yang akan diikuti tahapan ini"
                                     data-actions-box="true" data-live-search="true" required>
                                     @foreach ($recruitmentTypes as $type)
                                         <option value="{{ $type->id }}" data-subtext="{{ $type->type_name }}">
@@ -38,7 +38,7 @@
 
                     <div class="form-group align-items-center mb-4 col-4">
                         <label class="mb-1" for="step_name">
-                            Step Name
+                            Nama Tahapan
                         </label>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Type step name..." id="step_name"
@@ -53,7 +53,7 @@
 
                     <div class="form-group align-items-center mb-4 col-4">
                         <label class="mb-1" for="step_order">
-                            Step Order
+                            Urutan Tahapan
                         </label>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Step order" id="step_order"
@@ -84,7 +84,7 @@
 
                     <div class="form-group align-items-center mb-4 col-12">
                         <label class="mb-1" for="step_description">
-                            Step Description
+                            Deskripsi
                         </label>
                         <div class="input-group">
                             <textarea class="form-control" id="step_description" name="step_description" placeholder="Type step description here..."

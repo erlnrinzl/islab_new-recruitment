@@ -6,7 +6,7 @@
         <div>
             <a class="btn btn-primary" href="{{ route('recruitment-step.create') }}">
                 <i class="text-white-50 fw-bold pe-1 bi bi-plus"></i>
-                <span>New Step</span>
+                <span>Tambah</span>
             </a>
         </div>
     </div>
@@ -27,7 +27,8 @@
                         <th scope="col">No</th>
                         <th scope="col">Role</th>
                         <th scope="col">Nama Tahapan</th>
-                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Minimal Score</th>
+                        <th scope="col">Urutan Tahap</th>
                         <th scope="col" class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -44,22 +45,33 @@
                                 {{ $step['step_name'] }}
                             </td>
                             <td>
-                                {{ $step->step_description }}
+                                {{ $step->step_score_min }}
+                            </td>
+                            <td>
+                                {{ $step->step_order }}
                             </td>
 
                             <td class="d-flex justify-content-center">
                                 <div class="d-flex">
                                     <div class="mx-2">
+                                        <a class="btn btn-sm btn-outline-info"
+                                            href="{{ route('recruitment-step.show', $step['id']) }}">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mx-2">
                                         <a class="btn btn-sm btn-warning"
                                             href="{{ route('recruitment-step.edit', $step['id']) }}">
-                                            edit
+                                            <i class="bi bi-pencil-square"></i>
                                         </a>
                                     </div>
                                     <div class="mx-2">
                                         <form method="POST" action="{{ route('recruitment-step.destroy', $step['id']) }}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm btn-danger">delete</button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </div>

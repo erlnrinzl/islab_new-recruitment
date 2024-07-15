@@ -10,7 +10,10 @@ class AdminRecruitmentStepController extends Controller
 {
     public function index()
     {
-        $recruitmentSteps = RecruitmentStep::with('type')->get();
+        $recruitmentSteps = RecruitmentStep::with('type')
+            ->orderBy('step_name', 'asc')
+            ->orderBy('step_order', 'asc')
+            ->get();
 
         return view('admin.recruitment-step.index', compact('recruitmentSteps'));
     }
@@ -45,7 +48,7 @@ class AdminRecruitmentStepController extends Controller
 
     public function show(RecruitmentStep $recruitmentStep)
     {
-        //
+        return view('admin.recruitment-step.show', compact('recruitmentStep'));
     }
 
     public function edit(RecruitmentStep $recruitmentStep)
